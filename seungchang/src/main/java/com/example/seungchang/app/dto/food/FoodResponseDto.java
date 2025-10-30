@@ -9,7 +9,7 @@ import lombok.Getter;
 @Builder
 public class FoodResponseDto {
     private Long id;
-    private String FoodName;
+    private String foodName;
     private int kcal;
     private int amountOfSelling;
     private Long restaurantId;

@@ -29,4 +29,22 @@ public class Food {
     private String foodName;
     private int amountOfSelling;
     private int kcal;
+
+    @Builder(access = AccessLevel.PROTECTED)
+    private Food(String foodName, int kcal, Restaurant restaurant){
+        this.foodName = foodName;
+        this.kcal = kcal;
+        this.amountOfSelling = 0;
+        this.restaurant = restaurant;
+    }
+    public static Food createFood(String foodName, int kcal, Restaurant restaurant){
+        validate(foodName, kcal);
+        return new Food(foodName, kcal, restaurant);
+    }
+    private static void validate(String foodName, int kcal) {
+        if (foodName == null || foodName.isBlank())
+            throw new IllegalArgumentException("음식 이름은 비어 있을 수 없습니다.");
+        if (kcal <= 0)
+            throw new IllegalArgumentException("칼로리가 0 이하일 수 없습니다.");
+    }
 }

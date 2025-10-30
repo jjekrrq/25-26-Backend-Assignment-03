@@ -8,9 +8,8 @@ import lombok.Getter;
 @Getter
 @Builder
 public class FoodRequestDto {
-    @NotBlank(message = "매장명은 필수입니다")
+    @NotBlank(message = "음식이름은 필수입니다")
     private String foodName;
-
     @NotNull(message = "칼로리 입력은 필수입니다")
-    private int kcal;
+    private Integer kcal;
 }

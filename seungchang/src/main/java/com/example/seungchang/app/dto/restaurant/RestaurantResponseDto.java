@@ -1,5 +1,7 @@
 package com.example.seungchang.app.dto.restaurant;
 
+import com.example.seungchang.app.domain.Food;
+import com.example.seungchang.app.dto.food.FoodResponseDto;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Getter;
@@ -14,4 +16,5 @@ public class RestaurantResponseDto {
     private String restaurantName;
     private String bossName;
     private int countOfFood;
+    private List<FoodResponseDto> foodList;
 }
