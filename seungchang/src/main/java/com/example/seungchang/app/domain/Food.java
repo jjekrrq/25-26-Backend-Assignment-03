@@ -1,5 +1,6 @@
 package com.example.seungchang.app.domain;
 
+import com.example.seungchang.app.dto.food.FoodRequestDto;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
@@ -47,4 +48,16 @@ public class Food {
         if (kcal <= 0)
             throw new IllegalArgumentException("칼로리가 0 이하일 수 없습니다.");
     }
+    public void update(FoodRequestDto foodRequestDto){
+        this.foodName = foodRequestDto.getFoodName();
+        this.kcal = foodRequestDto.getKcal();
+    }
+
+    public void increaseSales() {
+        this.amountOfSelling += 1;
+    }
+    public void resetSales() {
+        this.amountOfSelling = 0;
+    }
+
 }

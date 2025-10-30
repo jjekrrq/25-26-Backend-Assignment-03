@@ -15,6 +15,7 @@ public enum SuccessCode {
     // Food 200 ok
     FOOD_FOUND(HttpStatus.OK, "식당 조회 성공"),
     FOOD_UPDATED(HttpStatus.OK, "식당 수정 성공"),
+    FOOD_SOLD(HttpStatus.OK, "음식 판매"),
 
     // 201 Created, Delete
     RESTAURANT_CREATED(HttpStatus.CREATED, "식당 생성 성공"),
