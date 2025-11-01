@@ -1,6 +1,5 @@
 package com.example.seungchang.app.dto.restaurant;
 
-import com.example.seungchang.app.domain.Food;
 import com.example.seungchang.app.dto.food.FoodResponseDto;
 import lombok.AllArgsConstructor;
 import lombok.Builder;

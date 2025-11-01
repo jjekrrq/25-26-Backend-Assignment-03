@@ -42,7 +42,6 @@ public class Restaurant {
         return new Restaurant(restaurantName, bossName);
     }
 
-
     private static void validate(String restaurantName, String bossName) {
         if (restaurantName == null || restaurantName.isBlank())
             throw new IllegalArgumentException("식당 이름은 비어 있을 수 없습니다.");

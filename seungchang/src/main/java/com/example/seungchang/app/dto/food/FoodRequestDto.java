@@ -10,6 +10,7 @@ import lombok.Getter;
 public class FoodRequestDto {
     @NotBlank(message = "음식이름은 필수입니다")
     private String foodName;
+
     @NotNull(message = "칼로리 입력은 필수입니다")
     private Integer kcal;
 }

@@ -59,5 +59,4 @@ public class Food {
     public void resetSales() {
         this.amountOfSelling = 0;
     }
-
 }
