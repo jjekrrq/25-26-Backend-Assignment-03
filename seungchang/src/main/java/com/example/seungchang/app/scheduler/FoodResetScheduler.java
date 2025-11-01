@@ -23,7 +23,6 @@ public class FoodResetScheduler {
         foodRepository.findAll().forEach(food -> {
             food.resetSales();
         });
-
         log.info("하루 판매량 초기화 완료");
     }
 }
