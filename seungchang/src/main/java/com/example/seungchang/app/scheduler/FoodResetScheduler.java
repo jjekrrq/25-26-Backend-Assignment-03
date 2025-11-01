@@ -18,12 +18,12 @@ public class FoodResetScheduler {
     @Transactional
     @Scheduled(cron = "0 0 0 * * *", zone = "Asia/Seoul")
     public void resetDailySales() {
-        log.info("🔄 하루 판매량 초기화 작업 시작");
+        log.info("하루 판매량 초기화 작업 시작");
 
         foodRepository.findAll().forEach(food -> {
             food.resetSales();
         });
 
-        log.info("✅ 하루 판매량 초기화 완료");
+        log.info("하루 판매량 초기화 완료");
     }
 }
