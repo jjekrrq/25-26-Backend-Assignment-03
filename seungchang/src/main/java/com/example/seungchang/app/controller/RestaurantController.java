@@ -5,6 +5,7 @@ import com.example.seungchang.app.dto.restaurant.RestaurantResponseDto;
 import com.example.seungchang.app.service.RestaurantService;
 import com.example.seungchang.global.code.SuccessCode;
 import com.example.seungchang.global.responseTemplate.ApiResponseTemplate;
+import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.DeleteMapping;
@@ -27,7 +28,7 @@ public class RestaurantController {
 
     // 식당 생성
     @PostMapping("/create")
-    public ResponseEntity<ApiResponseTemplate<RestaurantResponseDto>> createRestaurant(@RequestBody RestaurantRequestDto restaurantRequestDto){
+    public ResponseEntity<ApiResponseTemplate<RestaurantResponseDto>> createRestaurant(@RequestBody @Valid RestaurantRequestDto restaurantRequestDto){
         RestaurantResponseDto restaurantResponseDto = restaurantService.saveRestaurant(restaurantRequestDto);
         return ApiResponseTemplate.success(SuccessCode.RESTAURANT_CREATED, restaurantResponseDto);
     }
@@ -45,7 +46,7 @@ public class RestaurantController {
     }
     // 식당 업데이트
     @PutMapping ("/update/{id}")
-    public ResponseEntity<ApiResponseTemplate<RestaurantResponseDto>> updateRestaurant(@PathVariable Long id, @RequestBody RestaurantRequestDto restaurantRequestDto){
+    public ResponseEntity<ApiResponseTemplate<RestaurantResponseDto>> updateRestaurant(@PathVariable Long id, @RequestBody @Valid RestaurantRequestDto restaurantRequestDto){
         RestaurantResponseDto restaurantResponseDto = restaurantService.updateRestaurantById(id, restaurantRequestDto);
         return ApiResponseTemplate.success(SuccessCode.RESTAURANT_UPDATED, restaurantResponseDto);
     }
