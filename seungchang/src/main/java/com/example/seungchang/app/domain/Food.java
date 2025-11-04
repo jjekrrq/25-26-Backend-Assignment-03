@@ -38,16 +38,19 @@ public class Food {
         this.amountOfSelling = 0;
         this.restaurant = restaurant;
     }
+
     public static Food createFood(String foodName, int kcal, Restaurant restaurant){
         validate(foodName, kcal);
         return new Food(foodName, kcal, restaurant);
     }
+
     private static void validate(String foodName, int kcal) {
         if (foodName == null || foodName.isBlank())
             throw new IllegalArgumentException("음식 이름은 비어 있을 수 없습니다.");
         if (kcal <= 0)
             throw new IllegalArgumentException("칼로리가 0 이하일 수 없습니다.");
     }
+
     public void update(FoodRequestDto foodRequestDto){
         this.foodName = foodRequestDto.getFoodName();
         this.kcal = foodRequestDto.getKcal();
@@ -56,6 +59,7 @@ public class Food {
     public void increaseSales() {
         this.amountOfSelling += 1;
     }
+
     public void resetSales() {
         this.amountOfSelling = 0;
     }
